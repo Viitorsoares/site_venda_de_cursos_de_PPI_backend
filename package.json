@@ -1,0 +1,16 @@
+{
+  "name": "projeto_backend_1parte",
+  "version": "1.0.0",
+  "description": "Esse é o projeto de backend 1ª parte da matéria de PPI (vendas de cursos online)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vitor Soares",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
