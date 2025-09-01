@@ -1,4 +1,4 @@
-import mysql from 'mysql2/promise';
+import mysql from "mysql2/promise";
 
 export default async function Connection() {
     if (global.poolConexoes) {
@@ -12,8 +12,8 @@ export default async function Connection() {
             password: 'Vitor803',
             waitForConnections: true,
             connectionLimit: 20,
-            maxIdle: 10, // max idle connections, the default value is the same as `connectionLimit`
-            idleTimeout: 60000, // idle connections timeout, in milliseconds, the default value 60000
+            maxIdle: 10, 
+            idleTimeout: 60000, 
             queueLimit: 0,
             enableKeepAlive: true,
             keepAliveInitialDelay: 0,

@@ -1,18 +1,18 @@
-import CourseDB from "../DB/courseDB";
+import CourseDB from "../DB/courseDB.js";
 
 export default class Course {
 
     // atributos privados
     #id_code;
     #title_course;
-    #date;
+    #data_course;
     #duration;
     #price
 
-    constructor(id_code, title_course, date, duration, price) {
+    constructor(id_code, title_course, data_course, duration, price) {
         this.#id_code = id_code;
         this.#title_course = title_course;
-        this.#date = date;
+        this.#data_course = data_course;
         this.#duration = duration;
         this.#price = price
     }
@@ -33,12 +33,12 @@ export default class Course {
         this.#title_course = newName;
     }
 
-    get date() {
-        return this.#date;
+    get data_course() {
+        return this.#data_course;
     }
 
-    set date(newDate) {
-        this.#date = newDate;
+    set data_course(newDate) {
+        this.#data_course = newDate;
     }
 
     get duration() {
@@ -62,7 +62,7 @@ export default class Course {
         return {
             "id_code": this.#id_code,
             "title_course": this.#title_course,
-            "date": this.#date,
+            "data_course": this.#data_course,
             "duration": this.#duration,
             "price": this.#price
         }

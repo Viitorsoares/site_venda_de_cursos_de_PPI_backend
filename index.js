@@ -1,10 +1,36 @@
-const express = require('express');
+import Course from "./Models/course.js";
 
-// porta e host
-const app = express();
-const port = 3000;
-const host = 'localhost';
+let course = new Course(
+    "134679",
+    "Curso de responsividade css",
+    "25-06-2027",
+    "8 horas",
+    "180"
+);
 
-app.listen(port, host, () => {
-  console.log(`Servidor rodando em http://${host}:${port}`);
-});
+course.toRecord().then(() => {
+    console.log(`Curso gravado com sucesso`)
+}).catch((error) => {
+    console.log(`Erro ao gravar o pacote ${error}`)
+})
+
+
+// course.consult().then((listOfCourses) => {
+//     for (const course of listOfCourses) {
+//         console.log(course.toJSON())
+//     }
+// })
+
+
+// course.delete().then(() => {
+//     console.log("Curso deletado com sucesso!");
+// }).catch((error) => {
+//     console.log("Erro ao deletar o curso: " + error);
+// })
+
+
+// course.toAlter().then(() => {
+//     console.log("Curso alterado com sucesso!");
+// }).catch((error) => {
+//     console.log("Erro ao alterar o curso: " + error);
+// });
