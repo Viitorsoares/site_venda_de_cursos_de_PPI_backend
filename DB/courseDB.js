@@ -95,4 +95,27 @@ export default class CourseDB {
         }
         return listOfCourses;
     }
+
+    async consultId(id_code) {
+        id_code = id_code || '';
+        const connection = await Connection();
+        const sql = `SELECT * FROM course ORDER BY title_course`;
+        const [records] = await connection.execute(sql, [id_code]);
+        await connection.release();
+
+        let listOfCourses = [];
+
+        for (const record of records) {
+            const course = new Course(
+                record.id_code, 
+                record.title_course, 
+                record.data_course, 
+                record.duration, 
+                record.price, 
+            )
+
+            listOfCourses.push(course)
+        }
+        return listOfCourses;
+    }
 }

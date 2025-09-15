@@ -86,6 +86,11 @@ export default class Course {
 
     async consult() {
         const courseDB = new CourseDB();
-        return await courseDB.consult(this)
+        return await courseDB.consult()
+    }
+
+    async consultId(id_code) {
+        const courseDB = new CourseDB();
+        return await courseDB.consultId(id_code)
     }
 }
